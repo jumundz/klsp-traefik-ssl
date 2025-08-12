@@ -244,7 +244,13 @@ A: You can keep ACME config present; Traefik will serve the static cert when it 
 
 
 ## TLDR
-download  the klsp_ssl_jambantek.sh file and upload into your Ubuntu Server ( tested on Ubuntu Server 24.04 LTS ) 
+create a product folder make sure you grand chmod 755 to the folder before putting klsp_ssl_jambantek.sh into it
+```bash
+mkdir project
+sudo chmod 755 project
+```
+
+download  the klsp_ssl_jambantek.sh file and upload into your Ubuntu Server /project ( tested on Ubuntu Server 24.04 LTS ) 
 ```bash
 sudo chmod +x klsp_ssl_jambantek.sh
 ```
@@ -271,9 +277,8 @@ Make sure you portfoward all the necessary port to your Local KLSP Server
  - 443 TCP 
  - 30000:30300 UDP / TCP
 
-NO NDI HX PLUGIN Installed in this .sh file  Please check out KLSP installation guide to find out MORE
--------
-
+NO NDI HX PLUGIN Installed in this .sh file  
+Please check out KLSP installation guide to find out MORE
 
 
 
