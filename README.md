@@ -241,3 +241,39 @@ A: You can keep ACME config present; Traefik will serve the static cert when it 
 
 - Check container logs first: `docker logs -f traefik` and `docker logs -f klnksvr-pro`.
 - If you need to adjust behavior, edit `.env`, `docker-compose.yml`, or files in `traefik/dynamic/`, then `docker compose up -d`.
+
+
+## TLDR
+download  the klsp_ssl_jambantek.sh file and upload into your Ubuntu Server ( tested on Ubuntu Server 24.04 LTS ) 
+```bash
+sudo chmod +x klsp_ssl_jambantek.sh
+```
+Install Docker Container for Ubuntu and make sure you do teh following ( <your-user> ) means the user accountname
+  ```bash
+  sudo usermod -aG docker <your-user>
+  newgrp docker
+  ```
+Make sure you have a Dynamic DNS or Domain Name pointed to your on-prom public internet ( no-ip.org ) example.
+Answer the prompts during installation. Typical example:
+   - **Domain for KLSP (FQDN)**: `kls.example.com`
+   - **Let's Encrypt email**: `admin@example.com`
+   - **KLSP http local web access port (web_port)**: `83`
+   - **Aggregation port(s) for KiloLink (klnl_port)**: `50000,50001`
+   - **KLSP image tag**: `latest`
+   - **Public IP or DDNS devices will reach**: press **Enter** to reuse the domain ( e.g : // you on prep reachable IP address behind a NAT. for instance 192.168.1.XXX ) 
+
+Once Installation Complete you should test the KLSP is running : Navigate to the Local IP Address 192.168.1.XXX:83   < if you have change the port to others please use it else the defalt web_port should be 83
+
+your local on-premp with SSL is ready to go. 
+Make sure you portfoward all the necessary port to your Local KLSP Server 
+ - 50000:50001 UDP
+ - 80 TCP 
+ - 443 TCP 
+ - 30000:30300 UDP / TCP
+
+NO NDI HX PLUGIN Installed in this .sh file  Please check out KLSP installation guide to find out MORE
+-------
+
+
+
+
