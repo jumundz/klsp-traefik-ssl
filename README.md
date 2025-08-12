@@ -244,6 +244,13 @@ A: You can keep ACME config present; Traefik will serve the static cert when it 
 
 
 ## TLDR
+
+Install Docker Container for Ubuntu and make sure you do the following ( <your-user> ) means the user accountname
+  ```bash
+  sudo usermod -aG docker <your-user>
+  newgrp docker
+  ```
+
 create a product folder make sure you grand chmod 755 to the folder before putting klsp_ssl_jambantek.sh into it
 ```bash
 mkdir project
@@ -251,14 +258,21 @@ sudo chmod 755 project
 ```
 
 download  the klsp_ssl_jambantek.sh file and upload into your Ubuntu Server /project ( tested on Ubuntu Server 24.04 LTS ) 
+
+```bash
+wget -O klsp_ssl_jamtanket.sh \
+  https://raw.githubusercontent.com/jumundz/klsp-traefik-ssl/main/klsp_ssl_jamtanket.sh
+```
+
 ```bash
 sudo chmod +x klsp_ssl_jambantek.sh
 ```
-Install Docker Container for Ubuntu and make sure you do teh following ( <your-user> ) means the user accountname
-  ```bash
-  sudo usermod -aG docker <your-user>
-  newgrp docker
-  ```
+or you can run the following script 
+
+```bash
+/bin/bash <( curl https://raw.githubusercontent.com/jumundz/klsp-traefik-ssl/refs/heads/main/klsp_ssl_jambantek.sh)
+```
+
 Make sure you have a Dynamic DNS or Domain Name pointed to your on-prom public internet ( no-ip.org ) example.
 Answer the prompts during installation. Typical example:
    - **Domain for KLSP (FQDN)**: `kls.example.com`
