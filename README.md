@@ -282,7 +282,7 @@ Make sure you have a Dynamic DNS or Domain Name pointed to your on-prom public i
 Answer the prompts during installation. Typical example:
    - **Domain for KLSP (FQDN)**: `kls.example.com`
    - **Let's Encrypt email**: `admin@example.com`
-   - **KLSP http local web access port (web_port)**: `83`
+   - **KLSP http local web access port (web_port)**: `83`   please do not use port 80
    - **Aggregation port(s) for KiloLink (klnl_port)**: `50000,50001`
    - **KLSP image tag**: `latest`
    - **Public IP or DDNS devices will reach**: press **Enter** to reuse the domain ( e.g : // you on prep reachable IP address behind a NAT. for instance 192.168.1.XXX ) 
