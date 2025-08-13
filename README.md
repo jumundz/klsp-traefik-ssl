@@ -273,6 +273,11 @@ or you can run the following script
 /bin/bash <( curl https://raw.githubusercontent.com/jumundz/klsp-traefik-ssl/refs/heads/main/klsp_ssl_jambantek.sh)
 ```
 
+If you have error says ("ERROR: Docker Compose not found (neither 'docker compose' nor 'docker-compose').
+```bash
+sudo apt  install docker-compose 
+```
+
 Make sure you have a Dynamic DNS or Domain Name pointed to your on-prom public internet ( no-ip.org ) example.
 Answer the prompts during installation. Typical example:
    - **Domain for KLSP (FQDN)**: `kls.example.com`
